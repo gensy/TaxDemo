@@ -1,0 +1,83 @@
+﻿@using TaxDemo.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h3>Demo Tax API</h3>
+    <hr /><br />
+    <h5>Get the Tax rates for a location</h5>
+    <left>
+        <form asp-controller="Home" asp-action="Index"> 
+            <table>
+                <tr>
+                    <td>Country Code: </td>
+                    <td><input type="text" id="txtCountryCode" name="CountryCode" placeholder="ex: US" /></td>
+                    <td>Zip: </td>
+                    <td><input type="text" id="txtZip" name="Zip" placeholder="ex: 90404" /></td>
+                    <td>State Code: </td>
+                    <td><input type="text" id="txtStateCode" name="stateCode" placeholder="ex: CA"  /></td>
+                    <td>City: </td>
+                    <td><input type="text" id="txtCity" name="city" placeholder="ex: Santa Monica"  /></td>
+                    <td>Street: </td>
+                    <td><input type="text" id="txtStreet" name="street" placeholder="ex: 312 Hurricane Lane" /></td>
+                    <td><input type="submit" value="Get Rates" /></td>
+                </tr>
+            </table>
+            <hr />
+           
+        </form>
+    </left>
+    
+     <br /><br />
+    <h5>Calculate the taxes for an order (US)</h5>
+    <left>
+        <form asp-controller="Home" asp-action="GetOrderRates" method="post">
+            <table>
+                <tr>
+                    <td>From country: </td>
+                    <td><input type="text" id="txtFromCountry" name="from_country" value="US"/></td>
+                    <td>From zip: </td>
+                    <td><input type="text" id="txtFromZip" name="from_zip" value="07001" /></td>
+                    <td>From state: </td>
+                    <td><input type="text" id="txtFromState" name="from_state" value="NJ"  /></td>
+                    <td>To country: </td>
+                    <td><input type="text" id="txtToCountry" name="to_country" value="US" /></td>
+                    <td>To zip: </td>
+                    <td><input type="text" id="txtToZip" name="to_zip" value="07446" /></td>
+                    <td>To state: </td>
+                    <td><input type="text" id="txtToState" name="to_state" value="NJ" /></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>Amount: </td>
+                    <td><input type="text" id="txtAmount" name="amount" value="16.50" /></td>
+                    <td>Ahipping: </td>
+                    <td><input type="text" id="txtShipping" name="shipping"  value="1.5" /></td>
+                    <td>Quantity: </td>
+                    <td><input type="text" id="txtQuantity" name="line_items[0].quantity"  value="1" /></td>
+                    <td>Unit price: </td>
+                    <td><input type="text" id="txtUnitPrice" name="line_items[0].unit_price" value="15.0" /></td>
+                    <td>Product tax code: </td>
+                    <td><input type="text" id="txtProductTaxCode" name="line_items[0].product_tax_code" value="31000" /></td>
+                   
+                    <td><input type="submit" value="Get Order Taxes" /></td>
+                </tr>
+            </table>
+
+            <hr />
+           
+        </form>
+    </left>
+
+    <br /><br />
+    <div class="form-outline">
+      <textarea class="form-control" id="textAreaOutput" rows="8" placeholder="Result JSON...">@Html.Raw(ViewData["DataResponse"])</textarea>
+    </div>
+            
+
+    
+    
+</div>
