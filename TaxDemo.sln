@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxdemo", "AppDemo\Taxdemo.csproj", "{3FA40B10-BF78-4AA9-BAC6-15D97FDE038B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxdemo", "TaxDemo\Taxdemo.csproj", "{3FA40B10-BF78-4AA9-BAC6-15D97FDE038B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxDemo.Tests", "TaxDemo.Tests\TaxDemo.Tests.csproj", "{E3A1D65B-90CA-4213-9B13-8F385EB23A63}"
 EndProject
